@@ -12,7 +12,8 @@ class HomeController extends Controller
      }
 
      public function users(){
-          $users = User::all();
+        // eager loading
+        $users = User::with(['profile'])->get();
           return view('pages.users', compact('users'));
      }
 }
