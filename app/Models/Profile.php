@@ -16,4 +16,9 @@ class Profile extends Model
         'post_code',
         'country',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
