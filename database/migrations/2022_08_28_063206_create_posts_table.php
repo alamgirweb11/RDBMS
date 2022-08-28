@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->foreignId('category_id')->constrained();
             $table->string('title');
+            $table->string('slug')->unique();
             $table->string('thumbnail_img')->nullable();
             $table->longText('description');
             $table->enum('status',['pending', 'published', 'draft'])->default('pending');

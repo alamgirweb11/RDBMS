@@ -19,12 +19,10 @@ class HomeController extends Controller
      }
 
      public function categories(){
-             // retrieved data with eager loading
-             $categories = Category::with('posts',
-              function($q){
-                 $q->where('status', '=', 'published');
-             })->get();
-
-             return view('pages.categories', compact('categories'));
+         // retrieved data with eager loading
+         $categories = Category::with(['posts'], function($q){
+            $q->where('status', '=', 'published');
+         })->get();
+         return view('pages.categories', compact('categories'));
      }
 }
