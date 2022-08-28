@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link {{ request()->is('users') ? 'active' : '' }}" href="{{ route('users') }}">Users</a>
-        <a class="nav-link" href="#">Profile</a>
+        <a class="nav-link {{ request()->is('categories') ? 'active' : '' }}" href="{{ route('category') }}">Category</a>
       </div>
     </div>
   </nav>
