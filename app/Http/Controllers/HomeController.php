@@ -33,7 +33,6 @@ class HomeController extends Controller
 
      public function mechanics(){
            $mechanics = Mechanic::with(['car', 'owner'])->get();
-           return $mechanics;
-        //    return view('pages.mechanics', compact('mechanics'));
+           return view('pages.mechanics', compact('mechanics'));
      }
 }
