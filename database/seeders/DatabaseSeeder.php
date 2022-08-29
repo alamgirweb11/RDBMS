@@ -19,6 +19,9 @@ class DatabaseSeeder extends Seeder
               CategoryTableSeeder::class,
               PostTableSeeder::class,
               RoleSeeder::class,
+              MechanicSeeder::class,
+              CarSeeder::class,
+              OwnerSeeder::class,
        ]);
     }
 }
