@@ -14,7 +14,11 @@ class HomeController extends Controller
 
      public function users(){
         // eager loading
-        $users = User::with(['profile'])->get();
+        $users = User::with(['profile', 'roles' => 
+        function($q){
+            $q->wherePivot('expired_at', '>', now());
+     }
+     ])->get();
           return view('pages.users', compact('users'));
      }
 

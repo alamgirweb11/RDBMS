@@ -8,6 +8,7 @@
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">City</th>
+      <th scope="col">Roles & Expired Date</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,11 @@
       <td>{{ $user->email }}</td>
       <td>{{ $user->profile->phone }}</td>
       <td>{{ $user->profile->city }}</td>
+      <td>
+        @foreach ($user->roles as $role)
+        {{ $role->name }}, <small>Expired at({{ $role->pivot->expired_at }})</small>
+        @endforeach
+        </td>
     </tr>
     @endforeach
   </tbody>
