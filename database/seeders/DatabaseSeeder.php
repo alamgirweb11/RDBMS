@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
               MechanicSeeder::class,
               CarSeeder::class,
               OwnerSeeder::class,
+              CountrySeeder::class,
        ]);
     }
 }
