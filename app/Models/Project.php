@@ -10,4 +10,8 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+
+    public function developments(){
+           return $this->hasManyThrough(Development::class, Environment::class);
+    }
 }
