@@ -8,6 +8,7 @@
         <a class="nav-link {{ request()->is('users') ? 'active' : '' }}" href="{{ route('users') }}">Users</a>
         <a class="nav-link {{ request()->is('categories') ? 'active' : '' }}" href="{{ route('category') }}">Category</a>
         <a class="nav-link {{ request()->is('mechanics') ? 'active' : '' }}" href="{{ route('mechanics') }}">Mechanic</a>
+        <a class="nav-link {{ request()->is('projects') ? 'active' : '' }}" href="{{ route('projects') }}">Projects</a>
       </div>
     </div>
   </nav>

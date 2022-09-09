@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Mechanic;
+use App\Models\Project;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -34,5 +35,11 @@ class HomeController extends Controller
      public function mechanics(){
            $mechanics = Mechanic::with(['car', 'owner'])->get();
            return view('pages.mechanics', compact('mechanics'));
+     }
+
+     public function projects(){
+         $projects = Project::with(['environments','developments'])->get();
+         return view('pages.projects', compact('projects'));
+
      }
 }
