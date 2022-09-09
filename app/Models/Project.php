@@ -11,6 +11,10 @@ class Project extends Model
 
     protected $fillable = ['name'];
 
+    public function environments(){
+        return $this->hasMany(Environment::class);
+    }
+
     public function developments(){
            return $this->hasManyThrough(Development::class, Environment::class);
     }
