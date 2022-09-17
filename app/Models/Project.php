@@ -18,4 +18,9 @@ class Project extends Model
     public function developments(){
            return $this->hasManyThrough(Development::class, Environment::class);
     }
+    
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
+    }
 }

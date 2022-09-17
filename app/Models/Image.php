@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['url','imageable_type','imageable_id'];
+
+    /**
+     * Get the parent imageable model (profile or project).
+     */
+    public function imageable()
+    {
+        return $this->morphTo();
+    }
 }
