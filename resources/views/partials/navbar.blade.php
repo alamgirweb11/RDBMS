@@ -9,6 +9,7 @@
         <a class="nav-link {{ request()->is('categories') ? 'active' : '' }}" href="{{ route('category') }}">Category</a>
         <a class="nav-link {{ request()->is('mechanics') ? 'active' : '' }}" href="{{ route('mechanics') }}">Mechanic</a>
         <a class="nav-link {{ request()->is('projects') ? 'active' : '' }}" href="{{ route('projects') }}">Projects</a>
+        <a class="nav-link {{ request()->is('images') ? 'active' : '' }}" href="{{ route('images') }}">Image Path</a>
       </div>
     </div>
   </nav>

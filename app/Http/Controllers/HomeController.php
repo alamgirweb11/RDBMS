@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Mechanic;
 use App\Models\Project;
 use App\Models\User;
@@ -38,8 +39,13 @@ class HomeController extends Controller
      }
 
      public function projects(){
-         $projects = Project::with(['environments','developments'])->get();
+         $projects = Project::with(['environments','developments', 'image'])->get();
          return view('pages.projects', compact('projects'));
 
+     }
+
+     public function images(){
+           $images = Image::with('imageable')->get();
+           return view('pages.images', compact('images'));
      }
 }
