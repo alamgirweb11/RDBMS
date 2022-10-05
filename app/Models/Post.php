@@ -16,6 +16,6 @@ class Post extends Model
     }
 
     public function comments(){
-       return $this->morphToMany(Comment::class, 'commentable');
+       return $this->morphMany(Comment::class, 'commentable');
     }
 }

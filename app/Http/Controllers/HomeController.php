@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Image;
 use App\Models\Mechanic;
 use App\Models\Project;
@@ -47,5 +48,10 @@ class HomeController extends Controller
      public function images(){
            $images = Image::with('imageable')->get();
            return view('pages.images', compact('images'));
+     }
+
+     public function comments(){
+         $comments = Comment::with('commentable')->get();
+         return view('pages.comments', compact('comments'));
      }
 }

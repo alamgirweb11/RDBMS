@@ -11,8 +11,13 @@ class Video extends Model
 
     protected $fillable = ['user_id', 'title', 'slug', 'source_url', 'video', 'status'];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function comments(){
-        return $this->morphToMany(Comment::class, 'commentable');
+        return $this->morphMany(Comment::class, 'commentable');
      }
      
 }
