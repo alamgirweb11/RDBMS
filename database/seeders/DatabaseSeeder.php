@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
             //   CountrySeeder::class,
             //   ProjectSeeder::class,
             //   EnvironmentSeeder::class,
-              DevelopmentSeeder::class,
+              // DevelopmentSeeder::class,
+              VideoSeeder::class,
        ]);
     }
 }
