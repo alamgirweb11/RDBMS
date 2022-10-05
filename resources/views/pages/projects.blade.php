@@ -13,7 +13,11 @@
             @foreach ($projects as $project)
                 <tr>
                     <th scope="row">{{ $loop->index + 1 }}</th>
-                    <td>{{ $project->name }}</td>
+                    <td>
+                         @if($project->image) 
+                         <img src="{{ $project->image->url }}" height="60" width="60" alt="" srcset="">
+                         @endif
+                         {{ $project->name }}</td>
                     <td>
                         <ul>
                             @foreach ($project->environments as $environment)
